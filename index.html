@@ -1,44 +1,317 @@
 
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My First Website</title>
+<meta name="theme-color" content="#070907">
+<meta name="description" content="PRIYANKA GRAPHICS — Creative graphic design services including logos, YouTube thumbnails, social media posts, posters, banners and brand identity.">
+<title>PRIYANKA GRAPHICS | Creative Design Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+:root {
+  --bg: #070907;
+  --panel: #0e120e;
+  --green: #b7ff35;
+  --muted: #a1aaa0;
+  --line: #283527;
+  --white: #f5f7f2;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
 body {
   margin: 0;
-  padding: 40px 15px;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #101827, #34205c);
-  color: white;
-  text-align: center;
+  background: var(--bg);
+  color: var(--white);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.6;
 }
-.card {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 30px 15px;
-  border-radius: 20px;
-  background: #202c43;
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.wrap { width: min(1120px, 90%); margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(7,9,7,.93);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--line);
 }
-h1 { color: #60e6b5; }
-button {
-  padding: 13px 22px;
-  border: none;
-  border-radius: 10px;
-  background: #60e6b5;
-  font-size: 16px;
+.nav {
+  min-height: 76px; display: flex; align-items: center;
+  justify-content: space-between; gap: 20px;
+}
+.brand { font-weight: 800; font-size: 22px; line-height: 1.1; letter-spacing: 1px; }
+.brand span { color: var(--green); }
+.brand small { display: block; letter-spacing: 7px; font-size: 10px; color: var(--muted); }
+nav { display: flex; gap: 24px; font-size: 13px; }
+nav a:hover, .text-link { color: var(--green); }
+.menu-btn {
+  display: none; background: transparent; color: var(--green);
+  border: 1px solid var(--line); padding: 8px 12px; border-radius: 8px;
+}
+.hero {
+  padding: 90px 0 80px; overflow: hidden;
+  background: radial-gradient(ellipse at 85% 30%, #243719 0%, transparent 40%);
+}
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 35px; }
+.eyebrow { color: var(--green); text-transform: uppercase; font-size: 12px; letter-spacing: 3px; font-weight: 800; }
+.pill {
+  display: inline-block; border: 1px solid #5c852b; color: var(--green);
+  padding: 6px 12px; border-radius: 30px; font-size: 12px;
+}
+h1, h2, h3 { font-family: "Space Grotesk", sans-serif; line-height: 1.08; }
+h1 { font-size: clamp(42px, 6.4vw, 78px); margin: 20px 0; letter-spacing: -3px; }
+h1 span, .accent { color: var(--green); }
+.hero p { color: var(--muted); max-width: 520px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px; padding: 12px 19px; font-weight: 800;
+  font-size: 13px; border: 1px solid var(--green); cursor: pointer;
+}
+.btn-primary { background: var(--green); color: #10150a; }
+.btn-outline { background: transparent; color: var(--green); }
+.btn:hover { transform: translateY(-2px); }
+.hero-art {
+  min-height: 340px; display: grid; place-items: center; position: relative;
+}
+.orbit {
+  width: min(320px, 78vw); aspect-ratio: 1; border-radius: 50%;
+  border: 1px solid #547a2e; display: grid; place-items: center;
+  background: radial-gradient(circle, #273b1b, #0b1009 68%);
+  box-shadow: 0 0 90px #9be52b14;
+}
+.orbit-inner {
+  width: 76%; aspect-ratio: 1; border-radius: 50%;
+  border: 1px dashed #91c34b; display: grid; place-items: center;
+  color: var(--green); font-size: 100px; font-weight: 800;
+  font-family: "Space Grotesk", sans-serif;
+}
+.float-note {
+  position: absolute; bottom: 22px; right: 0; padding: 12px 16px;
+  background: #101610; border: 1px solid var(--line); border-radius: 10px;
+  color: var(--green); font-size: 12px;
+}
+section { padding: 72px 0; border-top: 1px solid var(--line); }
+.section-head {
+  display: flex; justify-content: space-between; gap: 25px;
+  align-items: end; margin-bottom: 30px;
+}
+.section-head h2 { font-size: clamp(30px, 4vw, 44px); margin: 8px 0 0; letter-spacing: -1px; }
+.section-head p { max-width: 420px; color: var(--muted); font-size: 14px; }
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.service {
+  background: linear-gradient(145deg, #111711, #090c09);
+  border: 1px solid var(--line); border-radius: 13px;
+  padding: 22px 18px; transition: .2s;
+}
+.service:hover, .project:hover { border-color: var(--green); transform: translateY(-4px); }
+.service .symbol { font-size: 30px; color: var(--green); }
+.service h3 { font-size: 17px; margin: 15px 0 8px; }
+.service p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
+.portfolio { background: #090c09; }
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.project {
+  border: 1px solid var(--line); border-radius: 13px; overflow: hidden;
+  background: var(--panel); transition: .2s;
+}
+.project-art {
+  min-height: 175px; display: grid; place-items: center; text-align: center;
+  padding: 20px; background: radial-gradient(circle at top right, #304d1e, #101610 68%);
+}
+.project-art strong {
+  font-family: "Space Grotesk", sans-serif; font-size: clamp(24px, 3vw, 37px);
+  line-height: 1.05; text-transform: uppercase; overflow-wrap: anywhere;
+}
+.project:nth-child(2) .project-art { background: linear-gradient(140deg,#252525,#090909); }
+.project:nth-child(3) .project-art { background: linear-gradient(140deg,#193f43,#111711); }
+.project:nth-child(4) .project-art { background: linear-gradient(140deg,#443016,#111); }
+.project:nth-child(5) .project-art { background: linear-gradient(140deg,#25234a,#111); }
+.project:nth-child(6) .project-art { background: linear-gradient(140deg,#26351d,#080908); }
+.project-info { padding: 15px 17px; }
+.project-info h3 { margin: 0 0 5px; font-size: 16px; }
+.project-info p { color: var(--muted); font-size: 12px; margin: 0; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; align-items: center; }
+.about-panel {
+  padding: 30px; border: 1px solid var(--line); border-radius: 16px;
+  background: radial-gradient(circle at 90% 10%, #263c1c, #0c100c 65%);
+}
+.about-panel .big { font-size: 54px; font-weight: 800; color: var(--green); font-family: "Space Grotesk", sans-serif; }
+.about-panel p, .about-copy p { color: var(--muted); }
+.checks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+.checks div { border: 1px solid var(--line); border-radius: 8px; padding: 12px; font-size: 13px; }
+.checks span { color: var(--green); margin-right: 7px; }
+.contact-box {
+  display: flex; justify-content: space-between; align-items: center; gap: 25px;
+  padding: 35px; border: 1px solid #48642d; border-radius: 18px;
+  background: radial-gradient(ellipse at 100% 0%, #273d1c, #0d110d 60%);
+}
+.contact-box h2 { font-size: clamp(30px, 4vw, 45px); margin: 10px 0; }
+.contact-box p { color: var(--muted); max-width: 480px; }
+footer { padding: 25px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+.footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; }
+footer strong { color: var(--green); }
+@media (max-width: 800px) {
+  nav { gap: 13px; font-size: 12px; }
+  .hero { padding: 65px 0; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-art { min-height: 260px; }
+  .orbit { width: 245px; }
+  .orbit-inner { font-size: 78px; }
+  .services { grid-template-columns: repeat(2, 1fr); }
+  .projects { grid-template-columns: repeat(2, 1fr); }
+  .section-head { align-items: start; flex-direction: column; gap: 10px; }
+}
+@media (max-width: 520px) {
+  .nav { min-height: 68px; flex-wrap: wrap; padding: 13px 0; }
+  .brand { font-size: 19px; }
+  .menu-btn { display: block; }
+  nav { display: none; width: 100%; flex-direction: column; padding: 10px 0; gap: 0; }
+  nav.open { display: flex; }
+  nav a { padding: 10px 0; border-top: 1px solid var(--line); }
+  h1 { letter-spacing: -2px; }
+  section { padding: 55px 0; }
+  .services { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .service { padding: 16px 13px; }
+  .service h3 { font-size: 15px; }
+  .projects { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .project-art { min-height: 135px; padding: 12px; }
+  .project-info { padding: 12px; }
+  .project-info h3 { font-size: 14px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-panel { padding: 23px; }
+  .checks { grid-template-columns: 1fr 1fr; }
+  .contact-box { padding: 24px; flex-direction: column; align-items: start; }
 }
 </style>
 </head>
+
 <body>
-<div class="card">
-<h1>Welcome! 👋</h1>
-<p>Yeh meri pehli website hai.</p>
-<p>Made with ❤️ using GitHub</p>
-<button onclick="alert('Thank you for visiting!')">
-Click Here
-</button>
-</div>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home"><span>PRIYANKA</span><small>G R A P H I C S</small></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰ Menu</button>
+    <nav id="nav">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">● &nbsp; CREATIVE DESIGN STUDIO</span>
+      <p class="eyebrow" style="margin-top:25px">DESIGN · CREATE · INSPIRE</p>
+      <h1>IDEAS INTO<br><span>VISUAL</span><br>IMPACT.</h1>
+      <p>I create bold, memorable designs that help creators and businesses stand out. From scroll-stopping thumbnails to complete brand identities, let's bring your vision to life.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#portfolio">Explore My Work ↗</a>
+        <a class="btn btn-outline" href="#contact">Let's Talk</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-label="Abstract creative graphic design artwork">
+      <div class="orbit"><div class="orbit-inner">PG</div></div>
+      <div class="float-note">✳ YOUR VISION, MY DESIGN</div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">WHAT I DO</div><h2>Creative <span class="accent">Services.</span></h2></div>
+      <p>Creative solutions designed to make your content memorable and your brand stand out.</p>
+    </div>
+    <div class="services">
+      <article class="service"><div class="symbol">▶</div><h3>YouTube Thumbnails</h3><p>Eye-catching visuals designed to help your videos stand out.</p></article>
+      <article class="service"><div class="symbol">✳</div><h3>Logo Design</h3><p>Distinctive logos that give your brand a memorable identity.</p></article>
+      <article class="service"><div class="symbol">▧</div><h3>Social Media Posts</h3><p>Scroll-stopping posts for your social media presence.</p></article>
+      <article class="service"><div class="symbol">▤</div><h3>Poster Design</h3><p>Creative posters for promotions, events and campaigns.</p></article>
+      <article class="service"><div class="symbol">▱</div><h3>Banner Design</h3><p>Professional banners for channels, brands and promotions.</p></article>
+      <article class="service"><div class="symbol">◇</div><h3>Brand Identity</h3><p>Consistent visual styles that make your brand recognisable.</p></article>
+      <article class="service"><div class="symbol">◈</div><h3>Photo Editing</h3><p>Polished edits, enhancements and creative visual treatments.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="eyebrow">SELECTED CONCEPTS</div><h2>My <span class="accent">Portfolio.</span></h2></div>
+      <p>A preview of design directions and creative concepts. Replace these demo cards with your real work.</p>
+    </div>
+    <div class="projects">
+      <article class="project"><div class="project-art"><strong>MAKE<br><span class="accent">IT POP.</span></strong></div><div class="project-info"><h3>YouTube Thumbnail</h3><p>Digital Content · Concept</p></div></article>
+      <article class="project"><div class="project-art"><strong style="letter-spacing:5px">P<span class="accent">G</span></strong></div><div class="project-info"><h3>Brand Logo</h3><p>Branding · Concept</p></div></article>
+      <article class="project"><div class="project-art"><strong>STAND<br><span class="accent">OUT.</span></strong></div><div class="project-info"><h3>Social Media Creative</h3><p>Social Media · Concept</p></div></article>
+      <article class="project"><div class="project-art"><strong>BIG<br><span class="accent">IDEAS.</span></strong></div><div class="project-info"><h3>Promotional Poster</h3><p>Advertising · Concept</p></div></article>
+      <article class="project"><div class="project-art"><strong>YOUR<br><span class="accent">BRAND.</span></strong></div><div class="project-info"><h3>Banner Design</h3><p>Digital Branding · Concept</p></div></article>
+      <article class="project"><div class="project-art"><strong>CREATE.<br><span class="accent">INSPIRE.</span></strong></div><div class="project-info"><h3>Visual Identity</h3><p>Creative Direction · Concept</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <div class="eyebrow">A LITTLE ABOUT ME</div>
+      <h2 style="font-size:clamp(32px,4vw,48px)">Good design is more than looks.<br><span class="accent">It's a feeling.</span></h2>
+      <p>Welcome to PRIYANKA GRAPHICS — a creative space for ideas, visuals and brands. My goal is to create designs that communicate clearly, feel memorable and fit your vision.</p>
+      <p>Have a project in mind? Let's discuss what you want to create.</p>
+      <a class="btn btn-outline" href="#contact">Start a Project ↗</a>
+    </div>
+    <div class="about-panel">
+      <div class="eyebrow">THE DESIGN PROMISE</div>
+      <div class="big">Think.<br>Create.<br>Impact.</div>
+      <p>Every project starts with an idea. Let's turn yours into a visual that gets noticed.</p>
+      <div class="checks">
+        <div><span>✦</span> Creative Concepts</div>
+        <div><span>✦</span> Detail Focused</div>
+        <div><span>✦</span> Clear Communication</div>
+        <div><span>✦</span> Brand Consistency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-box">
+    <div>
+      <div class="eyebrow">HAVE A PROJECT?</div>
+      <h2>Let's create something<br><span class="accent">remarkable.</span></h2>
+      <p>Tell me about your idea, business or design needs. Let's make something great together.</p>
+    </div>
+    <div>
+      <!-- Add your WhatsApp or email link here later -->
+      <a class="btn btn-primary" href="mailto:YOUR-EMAIL@example.com?subject=Graphic%20Design%20Enquiry">Discuss a Project ↗</a>
+      <p style="font-size:11px;max-width:230px">Contact details will be updated here. Replace the sample email before publishing.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <div><strong>PRIYANKA GRAPHICS</strong> · Design with purpose.</div>
+    <div>© <span id="year"></span> PRIYANKA GRAPHICS. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
+menuBtn.addEventListener("click", () => nav.classList.toggle("open"));
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => nav.classList.remove("open"));
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
