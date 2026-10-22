@@ -568,5 +568,47 @@ nav.querySelectorAll("a").forEach(link => {
 });
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+  
+<script>
+document.querySelectorAll('.portfolio-card img').forEach(function(img) {
+  img.style.cursor = 'zoom-in';
+
+  img.addEventListener('click', function() {
+    const overlay = document.createElement('div');
+
+    overlay.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.94);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 99999;
+      cursor: zoom-out;
+    `;
+
+    const fullImage = document.createElement('img');
+    fullImage.src = img.src;
+
+    fullImage.style.cssText = `
+      max-width: 100%;
+      max-height: 92vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    `;
+
+    overlay.appendChild(fullImage);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', function() {
+      overlay.remove();
+    });
+  });
+});
+    </script>
+  
 </body>
 </html>
