@@ -274,6 +274,91 @@ footer strong { color: var(--green); }
   line-height: 1.7;
 }
   
+/* Fix portfolio image sizes and card layout */
+.portfolio {
+  width: 100%;
+  box-sizing: border-box;
+  background: #080B08;
+  padding: 55px 0;
+}
+
+.portfolio .container {
+  width: 92%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.portfolio-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.portfolio-card {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.portfolio-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portfolio-card .card-info {
+  padding: 16px;
+  background: #fff;
+  color: #17243A;
+}
+
+.portfolio-card .card-info h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+.portfolio-card .card-info p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .portfolio-card img {
+    height: 150px;
+  }
+
+  .portfolio-card .card-info {
+    padding: 12px;
+  }
+
+  .portfolio-card .card-info h3 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-card img {
+    height: 220px;
+  }
+}
+  
 </style>
 </head>
 
